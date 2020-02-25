@@ -16,7 +16,7 @@ public class CarDAOTest {
 	public void addCarTest() {
 		
 		
-		Car testCar = new Car("Mercedes Benz", "C300", 2017, 18000.00, 4);
+		Car testCar = new Car("Mercedes Benz", "E350", 2017, 32000.00, 4, "dealership");
 		
 		
 		DAO.addCar(testCar);
@@ -34,17 +34,13 @@ public class CarDAOTest {
 	@Test
 	public void changeCarOwnershipTest () {
 		
-		List<Car> allCars = DAO.readAllCars();
+				
 		
-		Car currentCar = allCars.get(0);
+		DAO.changeCarOwnership(4, "dealership", 17000);
 		
+		Car currentCar = DAO.selectCarByVIN(4);
 		
-		
-		DAO.changeCarOwnership(currentCar.getVin(), "dealership", 17000);
-		
-		currentCar = allCars.get(0);
-		
-		assertEquals("Check if make is correct", "dealership", currentCar.getBelongsTo());
+		assertEquals("Check if owner is correct", "dealership", currentCar.getBelongsTo());
 		
 	}
 	

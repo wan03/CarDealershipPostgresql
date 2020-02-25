@@ -74,7 +74,7 @@ public class CarSerializationDAO {
 	
 
 	public Car selectCarByVIN(int vin) {
-		// TODO Auto-generated method stub
+		
 		Car car = null;
 	try (Connection conn = ConnectionFactory.getConnection()){
 			
@@ -87,7 +87,7 @@ public class CarSerializationDAO {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				car = new Car(rs.getString("make"), rs.getString("model"), rs.getInt("year"), rs.getDouble("price"), rs.getInt("vin"));
+				car = new Car(rs.getString("make"), rs.getString("model"), rs.getInt("year"), rs.getDouble("price"), rs.getInt("vin"), rs.getString("owner"));
 			
 			}
 			
@@ -113,7 +113,7 @@ public List<Car> readAllCars() {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				cars.add(new Car(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getDouble(4), rs.getInt(5)));
+				cars.add(new Car(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getDouble(4), rs.getInt(5), rs.getString(6)));
 				
 			}
 			
@@ -152,7 +152,7 @@ public List<Car> readAllCars() {
 				ResultSet rs = ps.executeQuery();
 				
 				while(rs.next()) {
-					cars.add(new Car(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getDouble(4), rs.getInt(5)));
+					cars.add(new Car(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getDouble(4), rs.getInt(5), rs.getString(6)));
 					
 				}
 				
@@ -169,7 +169,7 @@ public List<Car> readAllCars() {
 	
 	public void removeCar (Car c) {
 		
-		//TODO maybe only need to pass VIN
+		
 		try (Connection conn = ConnectionFactory.getConnection()){
 			
 			PreparedStatement ps = conn.prepareStatement("DELETE FROM cars WHERE vin=?");
@@ -217,7 +217,6 @@ public List<Car> readAllCars() {
 	
 	public void removeCar (int vin) {
 		
-		//TODO maybe only need to pass VIN
 		try (Connection conn = ConnectionFactory.getConnection()){
 			
 			PreparedStatement ps = conn.prepareStatement("DELETE FROM cars WHERE vin=?");

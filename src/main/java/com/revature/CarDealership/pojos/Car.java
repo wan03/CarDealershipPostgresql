@@ -90,15 +90,23 @@ public class Car extends Automobiles implements Serializable {
 		return make + " " + model + " " + year + " " + p + " " + vin;
 	}
 	
-	public Car (String make, String model, int year, double price, int vin) {
+	public Car (String make, String model, int year, double price, int vin, String belongsTo) {
 		super();
 		this.make =make;
 		this.model = model;
 		this.year = year;
 		this.price = price;
 		this.vin = vin;
+		this.belongsTo = belongsTo;
+	}
+	
+	public Car (String make, String model, int year, double price) {
+		super();
+		this.make =make;
+		this.model = model;
+		this.year = year;
+		this.price = price;
 		this.belongsTo = "dealership";
-		this.offers.put("none", 0);
 	}
 	
 	public Car () {
