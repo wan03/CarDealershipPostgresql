@@ -1,9 +1,10 @@
 package test;
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 
-import com.revature.CarDealership.pojos.Automobiles;
 import com.revature.CarDealership.pojos.Car;
 import com.revature.CarDealership.DAO.CarSerializationDAO;;
 
@@ -15,16 +16,16 @@ public class CarDAOTest {
 	public void addCarTest() {
 		
 		
-		Car ford = new Car("Mercedes Benz", "C300", "2017", 18000.00, "1FVAC4CV89HAG9773");
+		Car testCar = new Car("Mercedes Benz", "C300", 2017, 18000.00, 4);
 		
 		
-		DAO.addCar(ford);
+		DAO.addCar(testCar);
 		
-		Automobiles allCars = DAO.readAllCars();
+		List<Car> allCars = DAO.readAllCars();
 		
 		
 		
-		assertTrue(allCars.contains(ford));
+		assertTrue(allCars.contains(testCar));
 		
 		
 	}
@@ -33,15 +34,17 @@ public class CarDAOTest {
 	@Test
 	public void changeCarOwnershipTest () {
 		
-		Automobiles allCars = DAO.readAllCars();
+		List<Car> allCars = DAO.readAllCars();
 		
 		Car currentCar = allCars.get(0);
 		
-		allCars.changeOwnership(currentCar, "Test1");
+		
+		
+		DAO.changeCarOwnership(currentCar.getVin(), "dealership", 17000);
 		
 		currentCar = allCars.get(0);
 		
-		assertEquals("Check if make is correct", "Test1", currentCar.getBelongsTo());
+		assertEquals("Check if make is correct", "dealership", currentCar.getBelongsTo());
 		
 	}
 	
@@ -49,22 +52,16 @@ public class CarDAOTest {
 	public void removeCarTest() {
 		
 		
-		String vin = "1FVAC4CV89HAG9773";
+		int vin = 1;
 			
-		Automobiles allCars = DAO.readAllCars();
 		
-		Car carRemove = new Car();
 		
-		for (Car car : allCars) {
-			
-			if (car.getVin().equalsIgnoreCase(vin)) {
-				DAO.removeCar(car);
-			}
-		}
+		Car carRemove = DAO.selectCarByVIN(vin);
+		DAO.removeCar(vin);
 		
-		Automobiles newAllCars = DAO.readAllCars();
+		List<Car> AllCars = DAO.readAllCars();
 		
-		assertFalse(newAllCars.contains(carRemove));
+		assertFalse(AllCars.contains(carRemove));
 		
 		
 	}

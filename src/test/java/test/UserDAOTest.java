@@ -18,7 +18,7 @@ public class UserDAOTest {
 	@Test
 	public void addCustomerTest() {
 		
-		Customer testCustomer = new Customer("Test", "TestCustomer", "testing");
+		Customer testCustomer = new Customer("TestCustomer", "testing");
 		
 		DAO.addUser(testCustomer);
 		
@@ -31,7 +31,7 @@ public class UserDAOTest {
 	@Test
 	public void addEmployeeTest() {
 		
-		Employee testEmployee = new Employee("Test", "TestEmployee", "testing");
+		Employee testEmployee = new Employee("TestEmployee", "testing");
 		
 		DAO.addUser(testEmployee);
 		

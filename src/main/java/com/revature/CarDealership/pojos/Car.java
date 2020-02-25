@@ -2,7 +2,6 @@ package com.revature.CarDealership.pojos;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Car extends Automobiles implements Serializable {
 	
@@ -17,13 +16,13 @@ public class Car extends Automobiles implements Serializable {
 	
 	private String model;
 	
-	private String year;
+	private int year;
 	
 	private double price;
 	
-	private String vin;
+	private int vin;
 	
-	private String identifier;
+	private int identifier;
 	
 	private String belongsTo;
 	
@@ -55,11 +54,11 @@ public class Car extends Automobiles implements Serializable {
 		this.model = model;
 	}
 
-	public String getYear() {
+	public int getYear() {
 		return year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(int year) {
 		this.year = year;
 	}
 
@@ -71,7 +70,7 @@ public class Car extends Automobiles implements Serializable {
 		this.price = price;
 	}
 
-	public String getIdentifier() {
+	public int getIdentifier() {
 		
 		identifier = getVin();
 		return identifier;
@@ -91,14 +90,14 @@ public class Car extends Automobiles implements Serializable {
 		return make + " " + model + " " + year + " " + p + " " + vin;
 	}
 	
-	public Car (String make, String model, String year, double price, String vin) {
+	public Car (String make, String model, int year, double price, int vin) {
 		super();
 		this.make =make;
 		this.model = model;
 		this.year = year;
 		this.price = price;
 		this.vin = vin;
-		this.belongsTo = "Dealership";
+		this.belongsTo = "dealership";
 		this.offers.put("none", 0);
 	}
 	
@@ -106,11 +105,11 @@ public class Car extends Automobiles implements Serializable {
 		super();
 	}
 
-	public String getVin() {
+	public int getVin() {
 		return vin;
 	}
 
-	public void setVin(String vin) {
+	public void setVin(int vin) {
 		this.vin = vin;
 	}
 	
@@ -121,7 +120,7 @@ public class Car extends Automobiles implements Serializable {
 	        result = false;
 	    } else {
 	        Car car = (Car) object;
-	        if (this.vin.equals(car.getVin())) {
+	        if (this.vin == (car.getVin())) {
 	            result = true;
 	        }
 	    }

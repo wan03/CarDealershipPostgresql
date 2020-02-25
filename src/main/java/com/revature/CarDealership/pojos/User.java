@@ -9,8 +9,6 @@ public class User extends Users implements Serializable {
 	 */
 	private static final long serialVersionUID = 6269612208459571405L;
 
-	private String name;
-	
 	private String userName;
 	
 	private String password;
@@ -19,13 +17,6 @@ public class User extends Users implements Serializable {
 	
 	private String indetifier;
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getUserName() {
 		return userName;
@@ -57,9 +48,8 @@ public class User extends Users implements Serializable {
 		return indetifier;
 	}
 	
-	public User (String name, String userName, String password, String userType) {
+	public User (String userName, String password, String userType) {
 		super();
-		this.name = name;
 		this.userName = userName;
 		this.password = password;
 		this.userType = userType;
