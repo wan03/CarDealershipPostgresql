@@ -209,9 +209,10 @@ public class TerminalDriver {
 		
 		Offer currentOffer = new Offer(vin, user.getUserName(), offer);
 		
-		if (!offerCar.isEmpty()) {
+		if (offerCar.getVin() > 0) {
 			carDAO.addOffer(currentOffer);
 			Log.info(user.getUserName() + " has made an offer of " + offer + "on vin: " + vin);
+			System.out.println("Thank you for making an offer");
 			actionsCustomer(scan, users, cars, user);
 		} else {
 			System.out.println("Incorrect VIN number");
@@ -265,15 +266,17 @@ switch (action) {
 			break;
 		case "vp":
 			
-			for (Car car : cars) {
+			List<Car> paymentcars =  carDAO.readPaymentCars();
+			for (Car car : paymentcars) {
 				
-				if (!car.getBelongsTo().equalsIgnoreCase("dealership")) {
-					
-			double payment = car.getPrice()/60;
-			System.out.println("Owner: " + car.getBelongsTo() + " Make: " + car.getMake() + " Model: " + car.getModel() + " Remaining Paymets: 60 months" + " Monthly Payment: $" + df2.format(payment)  + "\n");
-			actionsEmployee(scan, users, cars, user);
-			} 			 
+				
+					double payment = car.getPrice()/60;
+					System.out.println("Owner: " + car.getBelongsTo() + " Make: " + car.getMake() + " Model: " + car.getModel() + " Remaining Paymets: 60 months" + " Monthly Payment: $" + df2.format(payment)  + "\n");
+			
+				
+				
 			}
+			
 			actionsEmployee(scan, users, cars, user);
 			
 			break;
@@ -322,6 +325,7 @@ switch (action) {
 		
 		carDAO.changeCarOwnership(offer.getCarVin(), offer.getCustomer(), offer.getOffer());
 		Log.info("Offer: " + offerId + " has been accepted by " + user.getUserName());
+		System.out.println("Offer has been accepted");
 		
 		carDAO.softDeleteOtherOffers(offer.getCarVin());
 		

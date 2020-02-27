@@ -37,39 +37,6 @@ public class CarSerializationDAO {
 		
 		
 		
-		
-		
-		
-//		Automobiles cars = readAllCars();
-//		if(cars.contains(c)) {
-//			cars.remove(c);
-//			cars.add(c);		
-//		} else { cars.add(c);}
-//		String filename = "cars.dat";
-//		FileOutputStream fos = null;
-//		ObjectOutputStream oos = null;
-//		try {
-//			fos = new FileOutputStream(filename);
-//			oos = new ObjectOutputStream(fos);
-//			oos.writeObject(cars);
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				oos.close();
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			try {
-//				fos.close();
-//				
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//		}
-		
 	}
 	
 
@@ -125,19 +92,33 @@ public List<Car> readAllCars() {
 		
 		return cars;
 	
-//	String filename;
-//	filename = "cars.dat";
-//	Automobiles b = null;
-//	try (FileInputStream fis = new FileInputStream(filename); ObjectInputStream ois = new ObjectInputStream(fis);) { //try with resources 
-//		b = (Automobiles) ois.readObject();
-//	} catch (FileNotFoundException e) {
-//		e.printStackTrace();
-//	} catch (IOException e) {
-//		e.printStackTrace();
-//	} catch (ClassNotFoundException e) {
-//		e.printStackTrace();
-//	}
-//	return b;
+
+}
+
+public List<Car> readPaymentCars() {
+	
+
+	List <Car> cars = new ArrayList<Car>();
+	try (Connection conn = ConnectionFactory.getConnection()){
+			
+			
+			
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM cars WHERE owner!=?");
+			ps.setString(1, "dealership");
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				cars.add(new Car(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getDouble(4), rs.getInt(5), rs.getString(6)));
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return cars;
 }
 
 	public List<Car> getOwnedCars(String userName) {
@@ -182,36 +163,6 @@ public List<Car> readAllCars() {
 			e.printStackTrace();
 		}	
 		
-//		Automobiles cars = readAllCars();
-//		if (cars.contains(c)) {
-//			
-//			cars.remove(c);		
-//		}
-//		String filename = "cars.dat";
-//		FileOutputStream fos = null;
-//		ObjectOutputStream oos = null;
-//		try {
-//			fos = new FileOutputStream(filename);
-//			oos = new ObjectOutputStream(fos);
-//			oos.writeObject(cars);
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				oos.close();
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			try {
-//				fos.close();
-//				
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		
 		
 	}
 	
@@ -249,36 +200,6 @@ public List<Car> readAllCars() {
 		
 		
 		
-		
-		
-		
-		
-//		Automobiles cars = readAllCars();
-//		cars.changeOwnership(car, userName);		
-//		String filename = "cars.dat";
-//		FileOutputStream fos = null;
-//		ObjectOutputStream oos = null;
-//		try {
-//			fos = new FileOutputStream(filename);
-//			oos = new ObjectOutputStream(fos);
-//			oos.writeObject(cars);
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				oos.close();
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			try {
-//				fos.close();
-//				
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//		}
 		
 	}
 	

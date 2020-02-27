@@ -2,3 +2,48 @@
 2020-02-25 09:48:59 INFO  TerminalDriver:26 - System Started
 2020-02-25 09:49:33 INFO  TerminalDriver:26 - System Started
 2020-02-25 09:50:22 INFO  TerminalDriver:26 - System Started
+2020-02-27 08:53:27 INFO  TerminalDriver:26 - System Started
+2020-02-27 08:53:44 INFO  TerminalDriver:84 - wan has logged in.
+2020-02-27 08:58:31 INFO  TerminalDriver:26 - System Started
+2020-02-27 08:58:39 INFO  TerminalDriver:84 - wan has logged in.
+2020-02-27 08:59:43 INFO  TerminalDriver:26 - System Started
+2020-02-27 08:59:48 INFO  TerminalDriver:84 - wan has logged in.
+2020-02-27 09:00:22 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:00:27 INFO  TerminalDriver:84 - wan has logged in.
+2020-02-27 09:02:55 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:03:01 INFO  TerminalDriver:84 - wan has logged in.
+2020-02-27 09:03:07 INFO  TerminalDriver:214 - wan has made an offer of 26000on vin: 7
+2020-02-27 09:03:21 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:03:58 INFO  TerminalDriver:324 - Offer: 7 has been accepted by dealership
+2020-02-27 09:06:27 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:06:33 INFO  TerminalDriver:84 - wan has logged in.
+2020-02-27 09:19:13 INFO  TerminalDriver:111 - chris has been created as a new user.
+2020-02-27 09:19:48 INFO  TerminalDriver:214 - chris has made an offer of 15000on vin: 4
+2020-02-27 09:22:09 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:24:12 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:24:18 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:25:04 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:25:11 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:25:59 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:26:06 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:26:13 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:31:08 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:31:17 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:31:59 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:32:07 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:32:54 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:33:00 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:35:09 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:35:18 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:40:35 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:40:42 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 09:56:48 INFO  TerminalDriver:26 - System Started
+2020-02-27 09:57:07 INFO  TerminalDriver:84 - wan has logged in.
+2020-02-27 10:13:53 INFO  TerminalDriver:26 - System Started
+2020-02-27 10:14:13 INFO  TerminalDriver:84 - wan has logged in.
+2020-02-27 10:15:15 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 10:16:17 INFO  TerminalDriver:111 - kenneth has been created as a new user.
+2020-02-27 10:16:47 INFO  TerminalDriver:214 - kenneth has made an offer of 25000on vin: 4
+2020-02-27 10:17:13 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 10:18:09 INFO  TerminalDriver:88 - dealership has logged in.
+2020-02-27 10:18:21 INFO  TerminalDriver:327 - Offer: 9 has been accepted by dealership
